@@ -10,6 +10,8 @@ const forecast = require('./utils/forecast')
 
 const app = ex()
 
+const port = process.env.PORT || 3000
+
 //define paths for express config
 const pubpath = p.join(__dirname, '../public')
 const viewspath = p.join(__dirname, '../templates/views')
@@ -107,7 +109,8 @@ app.get('*', (req, res) =>  {
         title: 'Error!!!'
     })
 })
-app.listen(3002, () =>  {
+
+app.listen((port), () =>  {
     console.log('Server up and running')
 })
 //app.com
